@@ -17,14 +17,14 @@ class RegisterCategoryController(
 ) {
     @PostMapping
     fun registerCategory(@RequestBody @Valid category: CategoryRequest): ResponseEntity<CategoryResponse> {
-        val savedCategory = registerCategoryService.execute(category.toEntity())
+        val savedCategory = registerCategoryService.execute(category.toDomain())
         return ResponseEntity
             .created(URI.create("/api/v1/categories/${savedCategory.id}"))
             .body(savedCategory.toResponse())
     }
 }
 
-fun CategoryRequest.toEntity(): Category {
+fun CategoryRequest.toDomain(): Category {
     return Category(
         title = this.title!!,
         description = this.description!!,
