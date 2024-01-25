@@ -1,4 +1,4 @@
-package com.rochards.productcatalogmanagement.services.category
+package com.rochards.productcatalogmanagement.domain
 
 data class Category(
     val id: String? = null,

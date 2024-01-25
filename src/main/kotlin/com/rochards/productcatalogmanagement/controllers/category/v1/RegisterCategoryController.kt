@@ -1,6 +1,6 @@
 package com.rochards.productcatalogmanagement.controllers.category.v1
 
-import com.rochards.productcatalogmanagement.services.category.Category
+import com.rochards.productcatalogmanagement.domain.Category
 import com.rochards.productcatalogmanagement.services.category.RegisterCategoryService
 import jakarta.validation.Valid
 import org.springframework.http.ResponseEntity
