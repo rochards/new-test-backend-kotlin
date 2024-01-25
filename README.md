@@ -9,6 +9,14 @@ Before reading any further, I would like to highlight the key changes I've made 
 - My implementation will be done in Kotlin and Spring Boot;
 - AWS services will be emulated using [LocalStack](https://docs.localstack.cloud/getting-started/) to avoid the need for an actual AWS account.
 
+### How to run the project
+
+Requirements:
+- Docker Engine with docker compose;
+
+To view visualize the Mongo collection:
+- open http://0.0.0.0:8081/ on browser and provide username -> **admin**, password: **pass**;
+
 ## Original challenge and its requirements
 
 - Original title: **Backend Analyst Candidate Test**
