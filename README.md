@@ -13,6 +13,8 @@ Before reading any further, I would like to highlight the key changes I've made 
 
 Requirements:
 - Docker Engine with docker compose;
+- Execute `chmod +x build-and-run-script.sh` go give execution permission to the file;
+- Run `./build-and-run-script.sh`
 
 To view visualize the Mongo collection:
 - open http://0.0.0.0:8081/ on browser and provide username -> **admin**, password: **pass**;

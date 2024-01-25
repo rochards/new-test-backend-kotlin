@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'product-catalog-app'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['product-catalog:8080'] # product-catalog is the service defined in docker-compose.yml file
