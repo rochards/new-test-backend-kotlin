@@ -16,8 +16,11 @@ Requirements:
 - Execute `chmod +x build-and-run-script.sh` go give execution permission to the file;
 - Run `./build-and-run-script.sh`
 
-To view visualize the Mongo collection:
+To view the Mongo collection:
 - open http://0.0.0.0:8081/ on browser and provide username -> **admin**, password: **pass**;
+
+To access grafana:
+- open http://localhost:3000/ on browser and provide username -> **admin**, password: **admin**;
 
 ## Original challenge and its requirements
 
