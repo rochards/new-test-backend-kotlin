@@ -1,5 +1,7 @@
 package com.rochards.productcatalogmanagement.controllers
 
+import com.rochards.productcatalogmanagement.domain.BusinessException
+import com.rochards.productcatalogmanagement.domain.ExceptionCode
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.FieldError
@@ -24,6 +26,15 @@ class APIExceptionHandler {
         )
         return ResponseEntity(errorResponse, HttpStatus.BAD_REQUEST)
     }
+
+    @ExceptionHandler(BusinessException::class)
+    fun handleBusinessException(ex: BusinessException): ResponseEntity<ErrorResponse> {
+        val errorResponse = ErrorResponse(
+            code = ErrorCode.fromBusinessExceptionCode(ex.code).code,
+            message = ex.message!!
+        )
+        return ResponseEntity(errorResponse, HttpStatus.UNPROCESSABLE_ENTITY)
+    }
 }
 
 data class ErrorResponse(
@@ -33,5 +44,13 @@ data class ErrorResponse(
 
 enum class ErrorCode(val code: String) {
     INVALID_FIELD("invalid_field"),
-    UNKNOWN("unknown")
+    BUSINESS_VIOLATION("business_violation"),
+    UNKNOWN("unknown");
+
+    companion object {
+        fun fromBusinessExceptionCode(exCode: ExceptionCode): ErrorCode = when (exCode) {
+            ExceptionCode.CATEGORY_NOT_FOUND -> BUSINESS_VIOLATION
+            else -> UNKNOWN
+        }
+    }
 }
