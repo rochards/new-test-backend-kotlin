@@ -1,6 +1,5 @@
 package com.rochards.productcatalogmanagement.controllers.category.v1
 
-import com.rochards.productcatalogmanagement.domain.Category
 import com.rochards.productcatalogmanagement.services.category.RegisterCategoryService
 import jakarta.validation.Valid
 import org.springframework.http.ResponseEntity
@@ -22,21 +21,4 @@ class RegisterCategoryController(
             .created(URI.create("/api/v1/categories/${savedCategory.id}"))
             .body(savedCategory.toResponse())
     }
-}
-
-fun CategoryRequest.toDomain(): Category {
-    return Category(
-        title = this.title!!,
-        description = this.description!!,
-        ownerId = this.ownerId!!
-    )
-}
-
-fun Category.toResponse(): CategoryResponse {
-    return CategoryResponse(
-        id = this.id!!,
-        title = this.title,
-        description = this.description,
-        ownerId = this.ownerId
-    )
 }
