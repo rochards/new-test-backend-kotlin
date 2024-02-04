@@ -49,7 +49,7 @@ enum class ErrorCode(val code: String) {
 
     companion object {
         fun fromBusinessExceptionCode(exCode: ExceptionCode): ErrorCode = when (exCode) {
-            ExceptionCode.CATEGORY_NOT_FOUND -> BUSINESS_VIOLATION
+            ExceptionCode.CATEGORY_NOT_FOUND, ExceptionCode.OWNER_MISMATCH -> BUSINESS_VIOLATION
             else -> UNKNOWN
         }
     }
