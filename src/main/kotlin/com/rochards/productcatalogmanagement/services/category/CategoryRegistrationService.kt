@@ -5,7 +5,7 @@ import com.rochards.productcatalogmanagement.repositories.CategoryRepository
 import org.springframework.stereotype.Service
 
 @Service
-class RegisterCategoryService(
+class CategoryRegistrationService(
     private val categoryRepository: CategoryRepository
 ) {
 
