@@ -12,5 +12,5 @@ data class ProductModel(
     val description: String,
     val price: BigDecimal,
     val ownerId: String,
-    val categoryId: String?
+    var categoryId: String?
 )

@@ -8,5 +8,6 @@ class BusinessException(
 enum class ExceptionCode {
     UNKNOWN,
     CATEGORY_NOT_FOUND,
+    PRODUCT_NOT_FOUND,
     OWNER_MISMATCH
 }

@@ -26,6 +26,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("io.micrometer:micrometer-registry-prometheus")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
