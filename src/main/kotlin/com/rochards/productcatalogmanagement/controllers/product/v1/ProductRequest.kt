@@ -10,6 +10,5 @@ data class ProductRequest(
     @field:[NotBlank Size(max = 50)] val title: String?,
     @field:[NotBlank Size(max = 100)] val description: String?,
     @field:Min(0) val price: BigDecimal?,
-    @field:UUID val ownerId: String?,
-    @field:[NotBlank Size(min = 24, max = 24)] val categoryId: String?
+    @field:UUID val ownerId: String?
 )

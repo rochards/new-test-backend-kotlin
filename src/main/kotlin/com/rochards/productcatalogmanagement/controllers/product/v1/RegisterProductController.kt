@@ -17,7 +17,7 @@ class RegisterProductController(
 
     @PostMapping
     fun registerProduct(@RequestBody @Valid product: ProductRequest): ResponseEntity<ProductResponse> {
-        val savedProduct = registerProductService.execute(product.categoryId!!, product.toDomain())
+        val savedProduct = registerProductService.execute(product.toDomain())
         return ResponseEntity
             .created(URI.create("/api/v1/products/${savedProduct.id}"))
             .body(savedProduct.toResponse())

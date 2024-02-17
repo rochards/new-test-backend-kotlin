@@ -4,7 +4,7 @@ import com.rochards.productcatalogmanagement.domain.Category
 import com.rochards.productcatalogmanagement.domain.Product
 import com.rochards.productcatalogmanagement.repositories.ProductModel
 
-fun Product.toModel(categoryId: String): ProductModel {
+fun Product.toModel(categoryId: String? = null): ProductModel {
     return ProductModel(
         title = this.title,
         description = this.description,
@@ -14,7 +14,7 @@ fun Product.toModel(categoryId: String): ProductModel {
     )
 }
 
-fun ProductModel.toDomain(category: Category): Product {
+fun ProductModel.toDomain(category: Category? = null): Product {
     return Product(
         id = this.id,
         title = this.title,

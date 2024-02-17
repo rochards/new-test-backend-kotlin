@@ -19,11 +19,13 @@ fun Product.toResponse(): ProductResponse {
         description = this.description,
         price = this.price,
         ownerId = this.ownerId,
-        category = CategoryResponse(
-            id = this.category!!.id!!,
-            title = this.category.title,
-            description = this.category.description,
-            ownerId = this.category.ownerId
-        )
+        category = this.category?.let {
+            CategoryResponse(
+                it.id!!,
+                it.title,
+                it.description,
+                it.ownerId
+            )
+        }
     )
 }
