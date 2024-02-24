@@ -18,3 +18,11 @@ fun Category.toResponse(): CategoryResponse {
         ownerId = this.ownerId
     )
 }
+
+fun CategoryUpdateRequest.toDomain(): Category {
+    return Category(
+        title = this.title ?: "",
+        description = this.description ?: "",
+        ownerId = this.ownerId ?: ""
+    )
+}

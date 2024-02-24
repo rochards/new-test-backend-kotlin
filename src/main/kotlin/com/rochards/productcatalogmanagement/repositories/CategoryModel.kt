@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 data class CategoryModel(
     @Id
     val id: String? = null,
-    val title: String,
-    val description: String,
-    val ownerId: String
+    var title: String,
+    var description: String,
+    var ownerId: String
 )
